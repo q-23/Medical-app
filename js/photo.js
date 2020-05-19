@@ -1,3 +1,5 @@
-export default function () {
-
+export default function (imageUrl) {
+    return `
+        <img src="${imageUrl}"/>
+    `;
 }
