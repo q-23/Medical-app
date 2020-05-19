@@ -18,6 +18,6 @@ const { client_id, client_secret, grant_type, refresh_token } = credentials;
     });
 
     const { mediaItems } = await googlePhotosResponse.json();
-    const photosHTMLinput = mediaItems.map(({baseUrl}) => photo(baseUrl)).join('');
+    const photosHTMLinput = mediaItems.map(({baseUrl}, index) => photo(baseUrl, index)).join('');
     row.innerHTML = photosHTMLinput;
 })();
