@@ -1,6 +1,6 @@
 import credentials from '../credentials.js';
 import photo from './photo.js';
-const container = document.querySelector('div.container');
+const row = document.querySelector('div.row');
 
 const { client_id, client_secret, grant_type, refresh_token } = credentials;
 
@@ -18,7 +18,6 @@ const { client_id, client_secret, grant_type, refresh_token } = credentials;
     });
 
     const { mediaItems } = await googlePhotosResponse.json();
-    const photosHTMLinput = mediaItems.map(({baseUrl}) => photo(baseUrl)).join('')
-    container.innerHTML = photosHTMLinput;
-
-})()
+    const photosHTMLinput = mediaItems.map(({baseUrl}) => photo(baseUrl)).join('');
+    row.innerHTML = photosHTMLinput;
+})();
